@@ -1,0 +1,41 @@
+<!-- 
+(c) @xditya
+View the license: https://github.com/xditya/WebShortener/blob/master/LICENSE 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Link Shortener</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <link rel="icon" href="assets/logo.svg" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Link Shortener</h1>
+            <p>Shorten your links, for free!</p>
+            <form id="shortenForm">
+                <input type="text" id="longURL" placeholder="Enter your URL">
+                <input type="submit" value="Shorten">
+            </form>
+        </div>
+
+        <!-- Custom Popup -->
+        <div id="customPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-button" onclick="closePopup()">&times;</span>
+                <h2>Shortened Link</h2>
+                <p id="shortenedLink"><a id="shortLink" href="#"
+                        target="_blank">Here's your shortened link</a></p>
+                <button id="copyButton" onclick="copyToClipboard()">Copy to
+                    Clipboard</button>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>With ❤️ by <a href="https://xditya.me">Aditya</a>!</p>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>

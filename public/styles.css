@@ -1,0 +1,179 @@
+/*
+(c) @xditya
+View the license: https://github.com/xditya/WebShortener/blob/master/LICENSE
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    /* Black background color */
+    color: #fff;
+    /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath d='M1 3h2M2 2h1M1 1h1M1 2h1M1 0h1M2 1h1M1 3v1' stroke='%23fff' stroke-opacity='.2'/%3E%3C/svg%3E");
+    /* Add diagonal crosshatch pattern to the background */
+    background-repeat: repeat;
+}
+
+.container {
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #222;
+    /* Darker container background color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    bottom: 0;
+    text-align: center;
+    position: absolute;
+    ;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    /* Light text color for headings */
+}
+
+p {
+    text-align: center;
+    color: #ccc;
+    /* Light text color for paragraphs */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #666;
+    /* Darker border color */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #333;
+    /* Darker input background color */
+    color: #fff;
+    /* Light text color for input text */
+}
+
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #004080;
+    /* Darker shade of blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #00264d;
+    /* Darker shade of blue on hover */
+}
+
+h2 {
+    font-size: 20px;
+    color: #fff;
+    /* Light text color for headings */
+    margin-top: 0;
+}
+
+/* Custom Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    /* Darker popup background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    /* Limit the maximum width of the popup */
+    text-align: center;
+    /* Center the content within the popup */
+}
+
+#shortenedLink {
+    color: #007bff;
+    /* Light blue color for the URL link */
+}
+
+#shortenedLink a {
+    color: #007bff;
+    /* Light blue color for the URL link */
+    text-decoration: none;
+}
+
+#shortenedLink a:hover {
+    text-decoration: underline;
+    /* Underline the URL link on hover */
+}
+
+#copyButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #004080;
+    /* Darker shade of blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#copyButton:hover {
+    background-color: #00264d;
+    /* Darker shade of blue on hover */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #ccc;
+    /* Light close button icon color */
+}
+
+.close-button:hover {
+    color: #fff;
+    /* Light close button icon color on hover */
+}
+
+/* Media Queries for Mobile */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}
