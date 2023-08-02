@@ -1,2 +1,2 @@
 .env
-*.test.ts
+*.test.*

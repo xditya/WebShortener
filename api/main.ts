@@ -10,15 +10,11 @@ const router = new Router();
 
 router.get("/:urlhash", async (context) => {
   if (!context.params.urlhash) {
-    return context.response.body = "404.";
-  }
-  const res = await getUrl(context.params.urlhash);
-  if (!res) {
-    return context.response.body = "404.";
+    return context.response.body = { "error": "No URL provided." };
   }
   const url = await getUrl(context.params.urlhash);
   if (!url) {
-    return context.response.body = "404.";
+    return context.response.body = { "error": "Invalid URL." };
   }
   context.response.redirect(url);
 });

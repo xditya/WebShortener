@@ -3,6 +3,19 @@
 View the license: https://github.com/xditya/WebShortener/blob/master/LICENSE
 */
 
+const isValidUrl = (urlString) => {
+  const urlPattern = new RegExp(
+    "^(https?:\\/\\/)" + // validate protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // validate port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // validate fragment locator
+  return !!urlPattern.test(urlString);
+};
+
 document
   .getElementById("shortenForm")
   .addEventListener("submit", async function (event) {
@@ -15,7 +28,7 @@ document
       alert("Please enter a URL");
       return;
     }
-    if (!longURL.startsWith("http")) {
+    if (!isValidUrl(longURL)) {
       alert("Please enter a valid URL");
       return;
     }
